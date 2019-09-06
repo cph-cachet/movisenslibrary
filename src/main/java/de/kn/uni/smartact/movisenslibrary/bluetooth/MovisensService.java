@@ -363,7 +363,7 @@ public class MovisensService extends Service {
 
         start();
         log(TAG, "Service stared");
-        return Service.START_STICKY;
+        return Service.START_NOT_STICKY;
     }
 
     @Override
