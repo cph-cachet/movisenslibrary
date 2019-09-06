@@ -317,6 +317,7 @@ public class MovisensService extends Service {
     private void removeNotification() {
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.cancel(NOTIFICATION_ID);
+        mNotificationManager.cancelAll();
     }
 
     private void setConnectionState(Boolean connected) {
@@ -367,10 +368,11 @@ public class MovisensService extends Service {
 
     @Override
     public void onDestroy() {
+        removeNotification();
         stop();
 
-        log(TAG, "Service stoped and destroyed");
-        removeNotification();
+        log(TAG, "Service stopped and destroyed");
+        //removeNotification();
         super.onDestroy();
     }
 
