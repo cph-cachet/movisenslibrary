@@ -425,7 +425,8 @@ public class MovisensService extends Service {
             Log.d(TAG, "GATT service not running");
         }
 
-        stopForeground(true);
+        stopForeground(Service.STOP_FOREGROUND_REMOVE);
+        print("inside stop : stop forground has been called");
         stopSelf();
     }
 
