@@ -373,6 +373,8 @@ public class MovisensService extends Service {
 
         log(TAG, "Service stopped and destroyed");
         //removeNotification();
+        this.stopSelf();
+
         super.onDestroy();
     }
 
