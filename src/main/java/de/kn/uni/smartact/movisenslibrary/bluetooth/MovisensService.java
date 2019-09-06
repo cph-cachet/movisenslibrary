@@ -375,6 +375,16 @@ public class MovisensService extends Service {
         super.onDestroy();
     }
 
+    @Override
+    public void onTaskRemoved(Intent rootIntent) {
+        Log.d(TAG,"onTaskRemoved called");
+        super.onTaskRemoved(rootIntent);
+        //do something you want
+        //stop service
+        removeNotification();
+        this.stopSelf();
+    }
+    
     public void start() {
         if (connectionHandler != null)
             stop();
