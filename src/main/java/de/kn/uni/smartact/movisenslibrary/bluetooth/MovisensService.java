@@ -363,18 +363,15 @@ public class MovisensService extends Service {
 
         start();
         log(TAG, "Service stared");
-        return Service.START_NOT_STICKY;
+        return Service.START_STICKY;
     }
 
     @Override
     public void onDestroy() {
-        removeNotification();
         stop();
 
-        log(TAG, "Service stopped and destroyed");
-        //removeNotification();
-        this.stopSelf();
-
+        log(TAG, "Service stoped and destroyed");
+        removeNotification();
         super.onDestroy();
     }
 
@@ -429,6 +426,7 @@ public class MovisensService extends Service {
         }
 
         stopForeground(true);
+        stopSelf();
     }
 
     private void unRegisterReceivers() {
