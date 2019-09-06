@@ -370,7 +370,7 @@ public class MovisensService extends Service {
     public void onDestroy() {
         stop();
 
-        log(TAG, "Service stoped and destroyed");
+        log(TAG, "Service stopped and destroyed");
         removeNotification();
         super.onDestroy();
     }
@@ -384,7 +384,7 @@ public class MovisensService extends Service {
         removeNotification();
         this.stopSelf();
     }
-    
+
     public void start() {
         if (connectionHandler != null)
             stop();
@@ -436,7 +436,7 @@ public class MovisensService extends Service {
         }
 
         stopForeground(Service.STOP_FOREGROUND_REMOVE);
-        Log.d(TAG,"inside stop : stop forground has been called");
+
         stopSelf();
     }
 
