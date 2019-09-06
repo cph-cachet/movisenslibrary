@@ -426,7 +426,7 @@ public class MovisensService extends Service {
         }
 
         stopForeground(Service.STOP_FOREGROUND_REMOVE);
-        print("inside stop : stop forground has been called");
+        Log.d(TAG,"inside stop : stop forground has been called");
         stopSelf();
     }
 
